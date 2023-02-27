@@ -1,5 +1,8 @@
-import { Column } from 'typeorm';
+import { Column, Entity } from 'typeorm';
 
+@Entity({
+  name: 'purchase'
+})
 export class PurchaseEntity {
   @Column({
     type: 'decimal',
