@@ -1,4 +1,7 @@
 import { IDatabaseConfigAttributes } from '../domain/database.interface';
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 
 export const databaseConfig: IDatabaseConfigAttributes = {
   database: process.env.POSTGRES_DB,
