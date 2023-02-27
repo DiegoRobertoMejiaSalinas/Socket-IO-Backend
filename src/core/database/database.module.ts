@@ -12,6 +12,11 @@ export class DatabaseModule {
           ...databaseConfig,
           type: 'postgres',
           synchronize: true,
+          logging: true,
+          entities: [
+            __dirname + '/../../entities/*{.ts,.js}',
+            __dirname + '/../../*/dto/entities/*{.ts,.js}',
+          ],
         }),
       ],
     };
