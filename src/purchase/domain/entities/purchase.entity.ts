@@ -1,7 +1,8 @@
-import { Column, Entity } from 'typeorm';
+import { StockEntity } from 'src/stock/domain/entities/stock.entity';
+import { Column, Entity, ManyToOne } from 'typeorm';
 
 @Entity({
-  name: 'purchase'
+  name: 'purchase',
 })
 export class PurchaseEntity {
   @Column({
@@ -19,4 +20,7 @@ export class PurchaseEntity {
     enum: ['S', 'B'],
   })
   type: string;
+
+  @ManyToOne(() => StockEntity, (stock) => stock.purchases)
+  stock: StockEntity;
 }
