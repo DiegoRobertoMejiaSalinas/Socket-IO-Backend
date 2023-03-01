@@ -1,5 +1,11 @@
 import { StockEntity } from 'src/stock/domain/entities/stock.entity';
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity({
   name: 'movement',
@@ -14,7 +20,7 @@ export class MovementEntity {
     scale: 2,
     nullable: false,
   })
-  amount: string;
+  amount: number;
 
   @Column({
     type: 'varchar',
@@ -25,5 +31,8 @@ export class MovementEntity {
   type: string;
 
   @ManyToOne(() => StockEntity, (stock) => stock.movements)
+  @JoinColumn({
+    name: 'stock_id',
+  })
   stock: StockEntity;
 }
