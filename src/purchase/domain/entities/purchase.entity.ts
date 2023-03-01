@@ -1,10 +1,13 @@
 import { StockEntity } from 'src/stock/domain/entities/stock.entity';
-import { Column, Entity, ManyToOne } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({
   name: 'purchase',
 })
 export class PurchaseEntity {
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
+
   @Column({
     type: 'decimal',
     precision: 10,
