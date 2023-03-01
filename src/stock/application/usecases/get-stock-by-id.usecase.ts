@@ -21,7 +21,7 @@ export class GetStockByIdUsecase {
           id: stockId,
         },
         relations: {
-          purchases: true,
+          movements: true,
         },
       });
 

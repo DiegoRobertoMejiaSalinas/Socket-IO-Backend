@@ -1,4 +1,4 @@
-import { PurchaseEntity } from 'src/purchase/domain/entities/purchase.entity';
+import { MovementEntity } from 'src/movement/domain/entities/movement.entity';
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 
 @Entity({
@@ -11,6 +11,6 @@ export class StockEntity {
   @Column()
   title: string;
 
-  @OneToMany(() => PurchaseEntity, (purchases) => purchases.stock)
-  purchases: PurchaseEntity[];
+  @OneToMany(() => MovementEntity, (purchases) => purchases.stock)
+  movements: MovementEntity[];
 }

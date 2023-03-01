@@ -3,12 +3,11 @@ import { Module } from '@nestjs/common';
 import { DatabaseModule } from './core/database/database.module';
 import { databaseConfig as postgresConfig } from './core/database/infrastructure/database.postgres';
 import { ConfigModule } from '@nestjs/config';
-import { PurchaseModule } from './purchase/purchase.module';
-
+import { MovementModule } from './movement/movement.module';
 @Module({
   imports: [
     StockModule,
-    PurchaseModule,
+    MovementModule,
     DatabaseModule.forRoot(postgresConfig),
     ConfigModule.forRoot({
       envFilePath: ['.env'],

@@ -2,9 +2,9 @@ import { StockEntity } from 'src/stock/domain/entities/stock.entity';
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({
-  name: 'purchase',
+  name: 'movement',
 })
-export class PurchaseEntity {
+export class MovementEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -24,6 +24,6 @@ export class PurchaseEntity {
   })
   type: string;
 
-  @ManyToOne(() => StockEntity, (stock) => stock.purchases)
+  @ManyToOne(() => StockEntity, (stock) => stock.movements)
   stock: StockEntity;
 }

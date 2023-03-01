@@ -14,7 +14,7 @@ export class ListStocksUsecase {
     try {
       const foundStocks = await this._stockRepository.find({
         relations: {
-          purchases: true,
+          movements: true,
         },
       });
 
