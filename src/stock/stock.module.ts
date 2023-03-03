@@ -11,6 +11,6 @@ import { StockController } from './infrastructure/stock.controller';
   imports: [TypeOrmModule.forFeature([StockEntity])],
   controllers: [StockController],
   providers: [StockService, ...StockProviders],
-  exports: [TypeOrmModule],
+  exports: [TypeOrmModule, ...StockProviders],
 })
 export class StockModule {}
