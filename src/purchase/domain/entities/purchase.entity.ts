@@ -1,5 +1,5 @@
 import { StockEntity } from 'src/stock/domain/entities/stock.entity';
-import { Column, Entity, ManyToOne } from 'typeorm';
+import { Column, CreateDateColumn, Entity, ManyToOne, UpdateDateColumn } from 'typeorm';
 
 @Entity({
   name: 'purchase',
@@ -23,4 +23,16 @@ export class PurchaseEntity {
 
   @ManyToOne(() => StockEntity, (stock) => stock.purchases)
   stock: StockEntity;
+
+  @CreateDateColumn({
+    name: 'created_at',
+    type: 'timestamp with time zone',
+  })
+  createdAt: Date;
+
+  @UpdateDateColumn({
+    name: 'updated_at',
+    type: 'timestamp with time zone',
+  })
+  updatedAt: Date;
 }
