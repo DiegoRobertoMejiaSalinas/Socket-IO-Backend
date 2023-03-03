@@ -14,8 +14,8 @@ export class DatabaseModule {
           synchronize: true,
           logging: true,
           entities: [
-            __dirname + '/../../entities/*{.ts,.js}',
-            __dirname + '/../../*/dto/entities/*{.ts,.js}',
+            __dirname + '/../../entities/*.entity.{ts,js}',
+            __dirname + '/../../**/domain/entities/*.entity.{ts,js}',
           ],
         }),
       ],
